@@ -1,0 +1,24 @@
+/**
+ * simple-image-slider
+ * @author <ericwaidesign@gmail.com>
+ */
+
+.simple-img-creator {
+    position: relative;
+    width: 100%;
+    height: auto;
+    /* display: block; */
+}
+
+.simple-img-creator {
+    position: absolute;
+    background-size: cover;
+}
+  
+.simple-img-creator-opacity-1 {
+    opacity: 1;
+}
+  
+.simple-img-creator-opacity-0 {
+    opacity: 0;
+}

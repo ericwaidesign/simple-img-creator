@@ -5,21 +5,21 @@
 
 module.exports = {
 
-	THOUSAND_MILLISECS: 1000,
-	FIVE_THOUSANDS_MILLISECS: 5000,
-
-	ONE: 1,
-	STRING_ONE: '1',
-	STRING_ZERO: '0',
+	// ONE: 1,
+	// STRING_ONE: '1',
+	// STRING_ZERO: '0',
 
 	LOAD: 'load',
 	STYLE: 'style',
 	LOW_RES: 'lowRes-',
 	HIGH_RES: 'highRes-',
-	IMAGE_CONTAINER: 'imageContainer',
-	IMAGE_LOADER_CONTAINER: 'imageLoaderContainer',
-	IMAGE: 'simpleImageSlider-image',
-	OPACITY_ZERO: 'simpleImageSlider-opacity-0',
-	OPACITY_ONE: 'simpleImageSlider-opacity_1'
+	HIGH_RES_IMG: 'highResImg',
+	SIMPLE_IMG_CREATOR: 'simple-img-creator-',
 
+	IMAGE_CONTAINER: 'simple-img-creator-container',
+	OPACITY_ZERO: 'simple-img-creator-opacity-0',
+	OPACITY_ONE: 'simple-img-creator-opacity_1',
+
+	HIGH_RES_IMG_CLASS: 'simple-img-creator-high-res',
+	LOW_RES_IMG_CLASS: 'simple-img-creator-low-res'
 }
