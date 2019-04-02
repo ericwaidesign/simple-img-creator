@@ -20,25 +20,18 @@ class SimpleImgCreator extends Component {
         super(props);
 
         this.state = {
-            highResImg: null,
-            highResImgClassOpacity: Constants.OPACITY_ZERO
+            lowResImgOpacity: Constants.OPACITY_ONE
         }
     }
 
-    componentDidMount() {
-        const highResImg = new Image();
-        highResImg.addEventListener(Constants.LOAD, this.highResImgOnload, false);
-        highResImg.src = this.props.params.highResImgUrl;
-    }
-
-    highResImgOnload = () => {
-        this.state.highResImgNode.setAttribute(Constants.STYLE, 'background-image');
-        setHighResImgOpacityToOne();
-    }
-
-    setHighResImgOpacityToOne = () => {
-        // Set the high resolution image opacity to 1.
-        this.setState({ highResImgClassOpacity: Constants.OPACITY_ONE });
+    /**
+     * @description instance property that sets the CSS class name 
+     * in state to trigger a re-render to update a DOM element's 
+     * opacity setting to 0.
+     */
+    setLowResImgOpacityTo0 = () => {
+        // Set class name to change the DOM element opacity to 0.
+        this.setState({ lowResImgOpacity: Constants.OPACITY_ZERO });
     }
 
     render() {
@@ -47,19 +40,18 @@ class SimpleImgCreator extends Component {
                 id={ `${this.props.params.uniqueImgName}` }
                 className={ `${Constants.IMAGE_CONTAINER}` }
             >
-                {/* high resolution image */}
-                <div
-                    className={ `${Constants.SIMPLE_IMG_CREATOR}` }
-                    ref={ highResImgNode => this.highResImg = highResImgNode }
-                >
-                </div>
+                {/* Low res placeholder image */}
+                <img
+                    className={ `${Constants.IMAGE} ${Constants.LOW_RES} ${this.state.lowResImgOpacity}` }
+                    src={ this.props.params.lowResImgUrl }
+                />
 
-                {/* low resolution image for placement */}
-                <div
-                    className={ `${Constants.SIMPLE_IMG_CREATOR}` }   
-                    style={{ backgroundImage: `url(${this.props.params.lowResImgUrl})` }}
-                >
-                </div>
+                {/* High res image */}
+                <img
+                    className={ `${Constants.IMAGE} ${Constants.HIGH_RES}` }
+                    src={ this.props.params.highResImgUrl }
+                    onLoad={ this.setLowResImgOpacityTo0 }
+                />
             </div>
         )
     }
@@ -72,7 +64,7 @@ SimpleImgCreator.propTypes = {
         // path to the low resolution img
         lowResImgUrl: PropTypes.string.isRequired,
         // path to the high resolution img
-        highResImgUrl: PropTypes.string.isRequired,
+        highResImgUrl: PropTypes.string.isRequired
     })
 };
 

@@ -3,22 +3,29 @@
  * @author <ericwaidesign@gmail.com>
  */
 
-.simple-img-creator {
-    position: relative;
+.simpleImgCreator-image {
     width: 100%;
     height: auto;
-    /* display: block; */
+    display: block;
+    position: absolute;
+}
+  
+.simpleImgCreator-opacity-1 {
+    opacity: 1;
+    -webkit-transition: opacity 1s ease-in-out;
+    -moz-transition: opacity 1s ease-in-out;
+    -o-transition: opacity 1s ease-in-out;
+    transition: opacity 1s ease-in-out;
+}
+  
+.simpleImgCreator-opacity-0 {
+    opacity: 0;
 }
 
-.simple-img-creator {
-    position: absolute;
-    background-size: cover;
+.simpleImgCreator-lowRes {
+    z-index: 1;
 }
-  
-.simple-img-creator-opacity-1 {
-    opacity: 1;
-}
-  
-.simple-img-creator-opacity-0 {
-    opacity: 0;
+
+.simpleImgCreator-highRes {
+    z-index: 0;
 }

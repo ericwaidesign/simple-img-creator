@@ -10,18 +10,14 @@ import SimpleImgCreator from "../../src";
 
 class App extends Component {
     render() {
-        const uniqueImgName = 'goldfishB';
-        const lowResImgUrl = './assets/images/lowRes_goldfishB.jpg';
-        const highResImgUrl = './assets/images/goldfishB.jpg';
-
         const params = {
-            uniqueImgName: uniqueImgName,
+            uniqueImgName: 'goldfishB',
             // low resolution image
-            lowResImgUrl: lowResImgUrl,
+            lowResImgUrl: './examples/src/assets/images/lowRes_goldfishB.jpg',
             // high resolution image
-            highResImgUrl: highResImgUrl
+            highResImgUrl: './examples/src/assets/images/goldfishB.jpg'
         }
-
+        
         return (
             <SimpleImgCreator params={params} />
         );

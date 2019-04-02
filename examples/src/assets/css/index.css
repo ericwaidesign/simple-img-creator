@@ -3,11 +3,10 @@
  * @author <ericwaidesign@gmail.com>
  */
 
- body {
+body {
     margin: 0;
     padding: 0;
     overflow-y: hidden; 
     overflow-x: hidden; 
     background-color: rgb(240, 240, 241);
-  }
-  
+}
