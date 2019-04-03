@@ -1,17 +1,12 @@
 {
   "name": "simple-img-creator",
   "version": "0.0.1",
-  "description": "https://www.npmjs.com/package/simple-img-creator",
-  "main": "dist/main.js",
+  "main": "dist/bundle.js",
+  "license": "ISC",
   "author": {
     "name": "Eric Wai",
     "email": "ericwaidesign@gmail.com",
     "url": "https://ericwaidesign.com"
-  },
-  "license": "ISC",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/ericwaidesign/simple-img-creator"
   },
   "scripts": {
     "start": "webpack-dev-server --open --config webpack.dev.js",
@@ -40,6 +35,7 @@
     "prop-types": "^15.6.0",
     "react": "^16.8.5",
     "react-dom": "^16.8.5",
+    "strip-loader": "^0.1.2",
     "style-loader": "^0.23.1",
     "url-loader": "^1.1.2",
     "webpack": "^4.29.6",

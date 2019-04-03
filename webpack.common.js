@@ -5,20 +5,22 @@
 
 const path = require('path');
 const HtmlWebpackPlugin = require("html-webpack-plugin");
-const htmlWebpackPlugin = new HtmlWebpackPlugin({
+const HtmlWebpackPluginConfig = new HtmlWebpackPlugin({
     template: path.join(__dirname, "./examples/src/index.html"),
     filename: "index.html"
-});
-
+})
 module.exports = {
     entry: path.join(__dirname, "./examples/src/app.js"),
+    output: {
+        filename: 'bundle.js',
+        path: path.resolve(__dirname, 'dist')
+    },
+    watch: true,
     module: {
         rules: [
             {
-                test: [
-                    /\.(js|jsx)$/
-                ],
-                use: "babel-loader",
+                test: /\.(js|jsx)$/,
+                use: ["babel-loader"],
                 exclude: /node_modules/
             },
             {
@@ -35,12 +37,10 @@ module.exports = {
             }
         ]
     },
-    plugins: [htmlWebpackPlugin],
+    plugins: [
+        HtmlWebpackPluginConfig
+    ],
     resolve: {
         extensions: [".js", ".jsx"]
-    },
-    output: {
-        filename: 'main.js',
-        path: path.resolve(__dirname, 'dist')
     }
 };
