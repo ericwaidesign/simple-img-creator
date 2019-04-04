@@ -56,11 +56,11 @@ class SimpleImgCreator extends Component {
 
 SimpleImgCreator.propTypes = {
     params: PropTypes.shape({
-        // name of the img
+        // name of the image
         uniqueImgName: PropTypes.string.isRequired,
-        // path to the low resolution img
+        // path to the low resolution image
         lowResImgUrl: PropTypes.string.isRequired,
-        // path to the high resolution img
+        // path to the high resolution image
         highResImgUrl: PropTypes.string.isRequired
     })
 };
