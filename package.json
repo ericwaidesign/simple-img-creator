@@ -1,12 +1,16 @@
 {
   "name": "simple-img-creator",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "main": "dist/index.js",
   "license": "ISC",
   "author": {
     "name": "Eric Wai",
     "email": "ericwaidesign@gmail.com",
     "url": "https://ericwaidesign.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ericwaidesign/simple-img-creator"
   },
   "scripts": {
     "start": "webpack-dev-server --open --config webpack.dev.js",
