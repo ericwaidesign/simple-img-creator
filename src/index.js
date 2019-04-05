@@ -9,9 +9,9 @@ import Constants from './assets/constants';
 import './assets/css/styles.css';
 
 /**
- * @description This class returns a div contains with the given low res 
- * placement image and a high res image. When the high res image on loaded, 
- * the opacity of the low res image change from 1 to 0.
+ * @description This class returns a div with the given low res 
+ * placement image and a high res image. When the high res image 
+ * on loaded, the opacity of the low res image change from 1 to 0.
  */
 class SimpleImgCreator extends Component {
 
@@ -24,8 +24,8 @@ class SimpleImgCreator extends Component {
     }
 
     /**
-     * @description sets the opacity of the low res image to 0 and trigger a 
-     * re-render to update the DOM element
+     * @description sets the opacity of the low res image to 0 and 
+     * trigger a re-render to update the DOM element
      */
     setLowResImgOpacityTo0 = () => {
         this.setState({ lowResImgOpacity: Constants.OPACITY_ZERO });
