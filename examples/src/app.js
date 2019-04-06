@@ -3,23 +3,29 @@
  * @author <ericwaidesign@gmail.com>
  */
 
+'use strict'
+
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import './assets/css/index.css';
+import Image from '../../src/assets/Image';
 import SimpleImgCreator from "../../src";
 
 class App extends Component {
     render() {
-        const params = {
-            uniqueImgName: 'goldfishB',
-            // low resolution image
-            lowResImgUrl: './examples/src/assets/images/lowRes_goldfishB.jpg',
-            // high resolution image
-            highResImgUrl: './examples/src/assets/images/goldfishB.jpg'
-        }
+        const newImage = new Image(
+                // The file name of the high res image without extension.
+                'goldfishB',
+                // The file path of the high res image.
+                './examples/src/assets/images/goldfishB.jpg',
+                // The file name of the low res image without extension.
+                'lowRes_goldfishB',
+                // The file path of the low res image.
+                './examples/src/assets/images/lowRes_goldfishB.jpg'
+        );
         
         return (
-            <SimpleImgCreator params={params} />
+            <SimpleImgCreator image={newImage} />
         );
     }
 }

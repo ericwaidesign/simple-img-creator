@@ -3,9 +3,12 @@
  * @author <ericwaidesign@gmail.com>
  */
 
+'use strict'
+
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import Constants from './assets/constants';
+import Image from './assets/Image';
 import './assets/css/styles.css';
 
 /**
@@ -33,20 +36,21 @@ class SimpleImgCreator extends Component {
 
     render() {
         return (
-            <div
-                id={ `${this.props.params.uniqueImgName}` }
+            <div 
                 className={ `${Constants.IMAGE_CONTAINER}` }
             >
                 {/* Low res placeholder image */}
                 <img
+                    id={ `${this.props.image.lowResFileName}` }
                     className={ `${Constants.IMAGE} ${Constants.LOW_RES} ${this.state.lowResImgOpacity}` }
-                    src={ this.props.params.lowResImgUrl }
+                    src={ `${this.props.image.lowResPath}` }
                 />
 
                 {/* High res image */}
                 <img
+                    id={ `${this.props.image.highResFileName}` }
                     className={ `${Constants.IMAGE} ${Constants.HIGH_RES}` }
-                    src={ this.props.params.highResImgUrl }
+                    src={ `${this.props.image.highResPath}` }
                     onLoad={ this.setLowResImgOpacityTo0 }
                 />
             </div>
@@ -55,14 +59,7 @@ class SimpleImgCreator extends Component {
 }
 
 SimpleImgCreator.propTypes = {
-    params: PropTypes.shape({
-        // name of the image
-        uniqueImgName: PropTypes.string.isRequired,
-        // path to the low resolution image
-        lowResImgUrl: PropTypes.string.isRequired,
-        // path to the high resolution image
-        highResImgUrl: PropTypes.string.isRequired
-    })
+    image: PropTypes.instanceOf(Image)
 };
 
 export default SimpleImgCreator;
