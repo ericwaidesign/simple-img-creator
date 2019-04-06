@@ -8,7 +8,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import Constants from './assets/constants';
-import Image from './assets/Image';
 import './assets/css/styles.css';
 
 /**
@@ -59,7 +58,16 @@ class SimpleImgCreator extends Component {
 }
 
 SimpleImgCreator.propTypes = {
-    image: PropTypes.instanceOf(Image)
+    image: PropTypes.shape({
+        // The file name of the high res image without extension.
+        highResFileName: PropTypes.string.isRequired,
+        // The file path of the high res image.
+        highResPath: PropTypes.string.isRequired,
+        // The file name of the low res image without extension.
+        lowResFileName: PropTypes.string.isRequired,
+        // The file path of the low res image.
+        lowResPath: PropTypes.string.isRequired
+    })
 };
 
 export default SimpleImgCreator;
