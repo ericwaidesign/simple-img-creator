@@ -8,7 +8,7 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import './assets/css/index.css';
-import Image from '../../src/assets/Image';
+import Image from '../../src/Image';
 import SimpleImgCreator from "../../src";
 
 class App extends Component {
